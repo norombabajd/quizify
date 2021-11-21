@@ -37,40 +37,25 @@ function shuffle_choices(choices){
     }
   return choices
 }
+
 function determineWin(choice){
   if(choice == artist){
     score += 1
   }
-  else
-}
-
-function run_quiz(event){
-  for(let x = 1; x < snippets.length; x++){
-    let snippet = snippets[x][0]
-    let artist = snippets[x][1]
-    let answers = []
-    for(let j = 0; j < 3; j++){
-      let rand = int(Math.random()* 30)
-      if(snippets[rand][1] != artist){
-        answers[j] = snippets[rand][1]
-      }
-      else{
-        j-=1
-      }
-    }
-    answers[3] = artist
-    let choices = []
-    for(let i = 0; i < 4; i++){
-      let rand = int(Math.random()* 4)
-      choices[i] = answers[rand]
-      answers.splice(rand, 1)
-    }
-    number.innerText = str(i) + "/" + str(snippets.length)
-    question.innerText = "\"" + snippet + "\""
-    song1.innerText = choices[0]
-    song2.innerText = choices[1]
-    song3.innerText = choices[2]
-    song4.innerText = choices[3]
+  index +=1
+  snippet = snippets[index][0]
+  artist = snippets[index][1]
+  choices = [artist]
+  for(let i = 1; i < 4; i++){
+    let rand = Math.floor(Math.random() * 3)
+    choices[i] = snippets[rand][1]
   }
+  choices = shuffle_choices(choices)
+  number.innerText = index + "/" + outof
+  question.innerText = "\"" + snippet + "\""
+  song1.innerText = choices[0]
+  song2.innerText = choices[1]
+  song3.innerText = choices[2]
+  song4.innerText = choices[3]
 }
 
