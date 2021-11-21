@@ -17,11 +17,16 @@ let snippet = snippets[index][0]
 let artist = snippets[index][1]
 let choices = [artist]
 for(let i = 1; i < 4; i++){
-  let rand = Math.floor(Math.random() * 3)
-  choices[i] = snippets[rand][1]
+  let rand = Math.floor(Math.random() * outof)
+  if(snippets[rand][1] == artist || choices.includes(snippets[rand][1])){
+    i-=1
+  } 
+  else{
+    choices[i] = snippets[rand][1]
+  }
 }
 choices = shuffle_choices(choices)
-document.getElementById("number").innerHTML = index + "/" + outof
+document.getElementById("number").innerHTML = (index+1) + "/" + outof
 document.getElementById("question").innerHTML = "\"" + snippet + "\""
 document.getElementById("song1").innerHTML = choices[0]
 document.getElementById("song2").innerHTML = choices[1]
@@ -44,28 +49,32 @@ function determineWin(choice){
     score += 1
   }
   index +=1
+  if (index == outof){
+    displayScore()
+  }
   snippet = snippets[index][0]
   artist = snippets[index][1]
   choices = [artist]
   for(let i = 1; i < 4; i++){
-    let rand = Math.floor(Math.random() * 3)
-    choices[i] = snippets[rand][1]
+    let rand = Math.floor(Math.random() * outof)
+    if(snippets[rand][1] == artist || choices.includes(snippets[rand][1])){
+      i-=1
+    } 
+    else{
+      choices[i] = snippets[rand][1]
+    }
   }
   choices = shuffle_choices(choices)
-  document.getElementById("number").innerHTML = index + "/" + outof
+  document.getElementById("number").innerHTML = (index+1) + "/" + outof
   document.getElementById("question").innerHTML = "\"" + snippet + "\""
   document.getElementById("song1").innerHTML = choices[0]
   document.getElementById("song2").innerHTML = choices[1]
   document.getElementById("song3").innerHTML = choices[2]
   document.getElementById("song4").innerHTML = choices[3]
-
-  if ((index+1) == outof){
-    displayScore()
-  }
 }
 
 function displayScore(){
-  document.getElementById("quiz").style.display = none
-  document.getElementById("score_display").style.display = inline
+  document.getElementById("quiz").style.display = "none"
+  document.getElementById("scoredisplay").style.display = "inline"
   document.getElementById("score").innerHTML = "Score: " + score + "/" + outof
 } 

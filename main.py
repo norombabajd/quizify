@@ -16,9 +16,6 @@ logging.basicConfig(level=logging.DEBUG)
 def index():
    return render_template("index.html")
 
-@app.route("/about")
-def index():
-   return render_template("about.html")
 
 @app.route("/login")
 def request_user_auth():
@@ -28,6 +25,7 @@ def request_user_auth():
   
   login_url = f"https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&scope=user-top-read&redirect_uri={redirect_uri}"
   return redirect(login_url)
+
 
 @app.route("/callback")
 def callback():
