@@ -6,6 +6,7 @@ import requests
 import base64
 import logging
 import json
+import random
 
 redirect_uri = "https://quizify-zothacks.herokuapp.com/callback"
 app = Flask(__name__)
@@ -16,6 +17,9 @@ logging.basicConfig(level=logging.DEBUG)
 def index():
    return render_template("index.html")
 
+@app.route("/about")
+def about():
+   return render_template("about.html")
 
 @app.route("/login")
 def request_user_auth():
