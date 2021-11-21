@@ -24,8 +24,8 @@ choices = shuffle_choices(choices)
 document.getElementById("number").innerHTML = index + "/" + outof
 document.getElementById("question").innerHTML = "\"" + snippet + "\""
 document.getElementById("song1").innerHTML = choices[0]
-song2.innerText = choices[1]
-document.getElementById("song1").innerHTM = choices[2]
+document.getElementById("song2").innerHTML = choices[1]
+document.getElementById("song3").innerHTML = choices[2]
 document.getElementById("song4").innerHTML = choices[3]
 
 
@@ -52,11 +52,11 @@ function determineWin(choice){
     choices[i] = snippets[rand][1]
   }
   choices = shuffle_choices(choices)
-  number.innerText = index + "/" + outof
-  question.innerText = "\"" + snippet + "\""
-  song1.innerText = choices[0]
-  song2.innerText = choices[1]
-  song3.innerText = choices[2]
-  song4.innerText = choices[3]
+  document.getElementById("number").innerHTML = index + "/" + outof
+  document.getElementById("question").innerHTML = "\"" + snippet + "\""
+  document.getElementById("song1").innerHTML = choices[0]
+  document.getElementById("song2").innerHTML = choices[1]
+  document.getElementById("song3").innerHTML = choices[2]
+  document.getElementById("song4").innerHTML = choices[3]
 }
 

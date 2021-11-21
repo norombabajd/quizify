@@ -6,7 +6,6 @@ import requests
 import base64
 import logging
 import json
-import os
 
 redirect_uri = "http://169.234.34.232:6378/callback"
 app = Flask(__name__)
@@ -80,4 +79,4 @@ def callback():
 
 
 if __name__ == "__main__":
-  app.run(port=os.environ.get("PORT"))
+  app.run()
