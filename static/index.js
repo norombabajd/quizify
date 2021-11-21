@@ -58,5 +58,14 @@ function determineWin(choice){
   document.getElementById("song2").innerHTML = choices[1]
   document.getElementById("song3").innerHTML = choices[2]
   document.getElementById("song4").innerHTML = choices[3]
+
+  if ((index+1) == outof){
+    displayScore()
+  }
 }
 
+function displayScore(){
+  document.getElementById("quiz").style.display = none
+  document.getElementById("score_display").style.display = inline
+  document.getElementById("score").innerHTML = "Score: " + score + "/" + outof
+} 

@@ -7,7 +7,7 @@ import base64
 import logging
 import json
 
-redirect_uri = "http://169.234.34.232:6378/callback"
+redirect_uri = "https://quizify-zothacks.herokuapp.com/callback"
 app = Flask(__name__)
 musixmatch = Musixmatch('777aba81aa95a4b792db0907518ccdb3')
 logging.basicConfig(level=logging.DEBUG)
@@ -16,6 +16,9 @@ logging.basicConfig(level=logging.DEBUG)
 def index():
    return render_template("index.html")
 
+@app.route("/about")
+def index():
+   return render_template("about.html")
 
 @app.route("/login")
 def request_user_auth():
@@ -25,7 +28,6 @@ def request_user_auth():
   
   login_url = f"https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&scope=user-top-read&redirect_uri={redirect_uri}"
   return redirect(login_url)
-
 
 @app.route("/callback")
 def callback():

@@ -130,6 +130,10 @@ body {
   display: inline-block;
 }
 
+#score_display{
+  display: none;
+}
+
 #footer{
   text-align: center;
   color: rgba(69,162,158,1);
