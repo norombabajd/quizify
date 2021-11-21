@@ -7,8 +7,9 @@ async function convert_data(event){
 snippets = snippets.replaceAll("&#34;", "\"")
 snippets = snippets.replaceAll("&#39;", "'")
 snippets = JSON.parse(snippets)
-if(snippets.length > 30):
+if(snippets.length > 30){
   snippets = snippets.slice(0,30)
+}
 let score = 0
 let index = 0
 let outof = snippets.length
