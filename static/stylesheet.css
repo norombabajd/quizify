@@ -54,10 +54,16 @@ body {
   text-decoration: none;
   margin-right: 60px;
   justify-content: center;
+  transition: 0.5s ease;
+}
+
+.button:hover{
+  box-shadow: inset 200px 0 0 0 #143130;
 }
 
 .break{
   overflow-wrap: anywhere;
+  width: 500px;
 }
 
 #header{
@@ -67,6 +73,15 @@ body {
   filter: drop-shadow(0px 9px 2px #143130);
   font-size: 95px;
   margin-bottom: 0px;
+  padding-right: 10px;
+}
+
+#number{
+  background: linear-gradient(0deg, rgba(69,162,158,1) 45%, rgba(102,252,241,1) 45%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 9px 2px #143130);
+  font-size: 50px;
   padding-right: 10px;
 }
 
@@ -113,4 +128,19 @@ body {
   margin-top: -10px;
   margin-right: 10px;
   display: inline-block;
+}
+
+#footer{
+  text-align: center;
+  color: rgba(69,162,158,1);
+  font-family: 'Inter Extrabold', sans-serif;
+}
+
+#score{
+  background: linear-gradient(0deg, rgba(69,162,158,1) 45%, rgba(102,252,241,1) 45%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 9px 2px #143130);
+  font-size: 95px;
+  padding-right: 10px;
 }

@@ -6,6 +6,7 @@ import requests
 import base64
 import logging
 import json
+import random
 
 redirect_uri = "http://169.234.34.232:6378/callback"
 app = Flask(__name__)
@@ -79,8 +80,15 @@ def callback():
 
 
 if __name__ == "__main__":
+  """  app.run(
+      host = '0.0.0.0',
+      port = '6378',
+      debug = "True"
+    )
+  """
+
   app.run(
-    host = '0.0.0.0',
-    port = '6378',
-    debug = "True"
-  )
+      host='0.0.0.0',
+      port=random.randint(2000, 9000),
+      debug = "True"
+    )
