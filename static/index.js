@@ -20,6 +20,12 @@ for(let i = 1; i < 4; i++){
   choices[i] = snippets[rand][1]
 }
 choices = shuffle_choices(choices)
+number.innerText = index + "/" + outof
+question.innerText = "\"" + snippet + "\""
+song1.innerText = choices[0]
+song2.innerText = choices[1]
+song3.innerText = choices[2]
+song4.innerText = choices[3]
 
 
 function shuffle_choices(choices){
@@ -32,8 +38,12 @@ function shuffle_choices(choices){
   return choices
 }
 function determineWin(choice){
-  if 
+  if(choice == artist){
+    score += 1
+  }
+  else
 }
+
 function run_quiz(event){
   for(let x = 1; x < snippets.length; x++){
     let snippet = snippets[x][0]
